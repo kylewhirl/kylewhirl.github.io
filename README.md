@@ -1,4 +1,4 @@
 # kylewhirl.github.io
 Website
 
-Go to kylewhirl.com to Access the Unity Game
+Go to kylewhirl.github.io to Access the Unity Game
