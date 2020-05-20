@@ -1,2 +1,0 @@
-# kylewhirl.github.io
-Website
