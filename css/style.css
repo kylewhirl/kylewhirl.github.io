@@ -87,21 +87,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .middle__image {
   @extend .image;
-<<<<<<< HEAD
   top: 1280px;
-=======
-  top: 150px;
->>>>>>> parent of 57b3711... ono
   transform: translateZ(5px) scale(parallax-scale-factor(5));
 }
 
 .foreground__image {
   @extend .image;
-<<<<<<< HEAD
   top: 1280px;
-=======
-  top: 125px;
->>>>>>> parent of 57b3711... ono
   transform: translateZ(2px) scale(parallax-scale-factor(2));
 }
 /*--------------------------------------------------------------
