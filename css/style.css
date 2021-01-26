@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+<<<<<<< HEAD
 .parallax__cover{
   background: #2D112B;
   display: block;
@@ -125,6 +126,24 @@ $parallax__layers: 6;
   .parallax__layer__#{$i}{
      transform: translateZ(-100 * $x#{px}) scale($x + 1);
   }
+=======
+.background__image {
+  @extend .image;
+  height: 840px;
+  transform: translateZ(0px) scale(1);
+}
+
+.middle__image {
+  @extend .image;
+  top: 1280px;
+  transform: translateZ(5px) scale(parallax-scale-factor(5));
+}
+
+.foreground__image {
+  @extend .image;
+  top: 1280px;
+  transform: translateZ(2px) scale(parallax-scale-factor(2));
+>>>>>>> parent of 9891b90... Update style.css
 }
 /*--------------------------------------------------------------
 # Header
