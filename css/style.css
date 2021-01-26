@@ -97,19 +97,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .background__image {
   @extend .image;
-  height: 840px;
+  height: auto;
   transform: translateZ(0px) scale(1);
 }
 
 .middle__image {
   @extend .image;
-  top: 1280px;
+  top: auto;
   transform: translateZ(5px) scale(parallax-scale-factor(5));
 }
 
 .foreground__image {
   @extend .image;
-  top: 1280px;
+  top: auto;
   transform: translateZ(2px) scale(parallax-scale-factor(2));
 }
 /*--------------------------------------------------------------
