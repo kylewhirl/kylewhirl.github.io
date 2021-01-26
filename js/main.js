@@ -126,13 +126,5 @@ jQuery(document).ready(function ($) {
   });
 
   // custom code
-  SCP({
-    selector: '#spotify-widget',
-    username: 'kylewhirl',
-    api_key: '8ee1034040231965835d19da074fc8a6',
-    width: '100%',
-    height: '370'
-  });
 
 });
-
