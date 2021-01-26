@@ -127,26 +127,4 @@ jQuery(document).ready(function ($) {
 
   // custom code
 
-<<<<<<< HEAD
-
-  $.ajax({
-    url: 'https://api.spotify.com/v1/me/player/currently-playing',
-    beforeSend: function(xhr) {
-         xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
-    }, success: function(data){
-        alert(data);
-        //process the JSON data etc
-    }
-})
-
-  SCP({
-    selector: '#spotify-widget',
-    username: 'kylewhirl',
-    api_key: '8ee1034040231965835d19da074fc8a6',
-    width: '100%',
-    height: '370'
-  });
-  
-=======
->>>>>>> parent of 95fa38e... Test
 });
