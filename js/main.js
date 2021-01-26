@@ -127,6 +127,7 @@ jQuery(document).ready(function ($) {
 
   // custom code
 
+<<<<<<< HEAD
 
   $.ajax({
     url: 'https://api.spotify.com/v1/me/player/currently-playing',
@@ -146,5 +147,6 @@ jQuery(document).ready(function ($) {
     height: '370'
   });
   
+=======
+>>>>>>> parent of 95fa38e... Test
 });
-
