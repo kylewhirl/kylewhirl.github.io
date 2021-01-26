@@ -126,6 +126,18 @@ jQuery(document).ready(function ($) {
   });
 
   // custom code
+
+
+  $.ajax({
+    url: 'https://api.spotify.com/v1/me/player/currently-playing',
+    beforeSend: function(xhr) {
+         xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
+    }, success: function(data){
+        alert(data);
+        //process the JSON data etc
+    }
+})
+
   SCP({
     selector: '#spotify-widget',
     username: 'kylewhirl',
@@ -133,6 +145,6 @@ jQuery(document).ready(function ($) {
     width: '100%',
     height: '370'
   });
-
+  
 });
 
