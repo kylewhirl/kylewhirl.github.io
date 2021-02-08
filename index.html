@@ -40,8 +40,18 @@
    <h1>"The value for number is: " <span id="myText"></span></h1>
 
    <script>
+      function httpGet(theUrl)
+      {
+         var xmlHttp = new XMLHttpRequest();
+         xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+         xmlHttp.send( null );
+         return xmlHttp.responseText;
+      }
+
+      deviceAPI = httpGet(https://theapicompany.com/deviceAPI.js?id= deviceAPI-iqntdrmkb0);
       var devicename = deviceAPI.deviceName; 
       document.getElementById("myText").innerHTML = devicename;
+
    </script>
 
   <!--==========================
