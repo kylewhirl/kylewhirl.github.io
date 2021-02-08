@@ -37,11 +37,12 @@
 
 <body>
 
-<script>
-      var devicename = deviceAPI.deviceName; document.getElementById("myText").innerHTML = devicename;
-   </script>
+   <h1>"The value for number is: " <span id="myText"></span></h1>
 
-  <h1>"The value for number is: " <span id="myText"></span></h1>
+   <script>
+      var devicename = deviceAPI.deviceName; 
+      document.getElementById("myText").innerHTML = devicename;
+   </script>
 
   <!--==========================
   Header
