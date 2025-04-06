@@ -69,6 +69,22 @@
       <h2>You're clearly lost, follow me.</h2>
       <a href="#about" class="btn-get-started">Get Started</a>
     </div>
+    <h1>Enter a URL to Visit</h1>
+  <form id="urlForm">
+    <input type="text" id="urlInput" placeholder="https://example.com" required>
+    <button type="submit">Go</button>
+  </form>
+
+  <script>
+    document.getElementById('urlForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const url = document.getElementById('urlInput').value.trim();
+      if (url) {
+        const hasProtocol = url.startsWith('http://') || url.startsWith('https://');
+        window.location.href = hasProtocol ? url : `https://${url}`;
+      }
+    });
+  </script>
   </section><!-- #hero -->
 
   <main id="main">
