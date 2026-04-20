@@ -37,6 +37,7 @@
     .priceInput { flex: 1; appearance: none; border: 1px solid var(--line); border-radius: 18px; padding: 14px 14px; font-size: 18px; font-weight: 700; text-align: center; background: rgba(255,255,255,.85); color: var(--text); }
     .priceInput::placeholder { color: var(--muted); }
     .cardSaveBtn { appearance: none; border: 0; border-radius: 18px; min-height: 50px; font-size: 16px; font-weight: 800; cursor: pointer; background: #1f1a17; color: white; padding: 0 14px; }
+    .skipBtn { appearance: none; border: 1px solid var(--line); border-radius: 18px; min-height: 50px; font-size: 16px; font-weight: 800; cursor: pointer; background: transparent; color: var(--text); padding: 0 14px; margin: 12px 0; }
     .footer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
     button { appearance: none; border: 0; border-radius: 18px; min-height: 62px; font-size: 20px; font-weight: 800; cursor: pointer; }
     .secondary { background: #e8dfd3; color: var(--text); }
@@ -147,6 +148,7 @@ function buildCard(i, peeking=false) {
         <div class="price">${money(row['Foothill Price'])}</div>
       </div>
     </div>
+    <button class="skipBtn">Skip</button>
     <div class="priceInputContainer">
       <input type="text" class="priceInput" placeholder="Enter price..." />
       <button class="cardSaveBtn">Save</button>
@@ -159,6 +161,7 @@ function attachSwipe(card, i) {
   const threshold = 90;
   const inputEl = card.querySelector('.priceInput');
   const cardSaveBtnEl = card.querySelector('.cardSaveBtn');
+  const skipBtnEl = card.querySelector('.skipBtn');
 
   function moveCard() {
     const rot = dx * 0.04;
@@ -174,8 +177,20 @@ function attachSwipe(card, i) {
     setTimeout(() => applyDecision(i, 'up', priceValue), 140);
   }
 
+  function skip() {
+    card.style.transition = 'transform .18s ease, opacity .18s ease';
+    card.style.transform = 'translateY(-140vh) rotate(0deg)';
+    card.style.opacity = '0';
+    setTimeout(() => {
+      history.push(i);
+      index = i + 1;
+      saveState();
+      render();
+    }, 140);
+  }
+
   card.addEventListener('pointerdown', (e) => {
-    if (e.target === inputEl || e.target === cardSaveBtnEl) return;
+    if (e.target === inputEl || e.target === cardSaveBtnEl || e.target === skipBtnEl) return;
     dragging = true;
     startX = e.clientX;
     startY = e.clientY;
@@ -219,6 +234,7 @@ function attachSwipe(card, i) {
   });
 
   cardSaveBtnEl.addEventListener('click', finishWithPrice);
+  skipBtnEl.addEventListener('click', skip);
   card.addEventListener('pointerup', finish);
   card.addEventListener('pointercancel', finish);
 }
