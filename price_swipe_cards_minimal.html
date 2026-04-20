@@ -27,12 +27,16 @@
     .card.peek { transform: scale(.985) translateY(10px); opacity: .55; z-index: 0; pointer-events: none; }
     .count { font-size: 14px; color: var(--muted); text-align: center; margin-bottom: 14px; font-weight: 700; letter-spacing: .02em; }
     .name { font-size: clamp(28px, 5.2vw, 42px); line-height: 1.08; font-weight: 800; text-align: center; margin: 6px 0 18px; word-break: break-word; }
-    .hint { text-align: center; color: var(--muted); font-size: 18px; font-weight: 700; margin-bottom: 26px; }
-    .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: auto; }
+    .hint { text-align: center; color: var(--muted); font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
     .priceBox { background: rgba(255,255,255,.65); border: 1px solid var(--line); border-radius: 22px; padding: 18px 12px 22px; min-height: 210px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
     .arrow { font-size: 36px; line-height: 1; margin-bottom: 8px; }
     .label { font-size: 16px; font-weight: 800; letter-spacing: .02em; margin-bottom: 12px; }
     .price { font-size: clamp(32px, 8vw, 48px); font-weight: 900; line-height: 1; }
+    .priceInputContainer { display: flex; gap: 10px; margin-top: auto; }
+    .priceInput { flex: 1; appearance: none; border: 1px solid var(--line); border-radius: 18px; padding: 14px 14px; font-size: 18px; font-weight: 700; text-align: center; background: rgba(255,255,255,.85); color: var(--text); }
+    .priceInput::placeholder { color: var(--muted); }
+    .cardSaveBtn { appearance: none; border: 0; border-radius: 18px; min-height: 50px; font-size: 16px; font-weight: 800; cursor: pointer; background: #1f1a17; color: white; padding: 0 14px; }
     .footer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
     button { appearance: none; border: 0; border-radius: 18px; min-height: 62px; font-size: 20px; font-weight: 800; cursor: pointer; }
     .secondary { background: #e8dfd3; color: var(--text); }
@@ -48,7 +52,7 @@
     <div class="empty" id="empty">All cards done.</div>
     <div class="footer">
       <button class="secondary" id="undoBtn">Undo</button>
-      <button class="primary" id="saveBtn">Save</button>
+      <button class="primary" id="saveBtn">Send</button>
     </div>
   </div>
   <div class="toast" id="toast"></div>
@@ -101,9 +105,13 @@ function decisionFor(dir, row) {
     : { decision: 'Foothill', chosenLocation: 'Foothill', chosenPrice: row['Foothill Price'] };
 }
 
-function applyDecision(i, dir) {
+function applyDecision(i, dir, customPrice=null) {
   const row = rows[i];
-  decisions[i] = decisionFor(dir, row);
+  if (dir === 'up') {
+    decisions[i] = { decision: 'Custom', chosenLocation: 'Custom', chosenPrice: customPrice || 'Custom Price' };
+  } else {
+    decisions[i] = decisionFor(dir, row);
+  }
   history.push(i);
   index = i + 1;
   saveState();
@@ -126,7 +134,7 @@ function buildCard(i, peeking=false) {
   card.innerHTML = `
     <div class="count">${i + 1} / ${rows.length}</div>
     <div class="name">${row['Foothill'] || ''}</div>
-    <div class="hint">swipe for price</div>
+    <div class="hint">swipe or enter price</div>
     <div class="prices">
       <div class="priceBox">
         <div class="arrow">←</div>
@@ -138,6 +146,10 @@ function buildCard(i, peeking=false) {
         <div class="label">Foothill</div>
         <div class="price">${money(row['Foothill Price'])}</div>
       </div>
+    </div>
+    <div class="priceInputContainer">
+      <input type="text" class="priceInput" placeholder="Enter price..." />
+      <button class="cardSaveBtn">Save</button>
     </div>`;
   return card;
 }
@@ -145,13 +157,25 @@ function buildCard(i, peeking=false) {
 function attachSwipe(card, i) {
   let startX = 0, startY = 0, dx = 0, dragging = false;
   const threshold = 90;
+  const inputEl = card.querySelector('.priceInput');
+  const cardSaveBtnEl = card.querySelector('.cardSaveBtn');
 
   function moveCard() {
     const rot = dx * 0.04;
     card.style.transform = `translateX(${dx}px) rotate(${rot}deg)`;
   }
 
+  function finishWithPrice() {
+    dragging = false;
+    const priceValue = inputEl.value.trim();
+    card.style.transition = 'transform .18s ease, opacity .18s ease';
+    card.style.transform = 'translateY(-140vh) rotate(0deg)';
+    card.style.opacity = '0';
+    setTimeout(() => applyDecision(i, 'up', priceValue), 140);
+  }
+
   card.addEventListener('pointerdown', (e) => {
+    if (e.target === inputEl || e.target === cardSaveBtnEl) return;
     dragging = true;
     startX = e.clientX;
     startY = e.clientY;
@@ -187,6 +211,14 @@ function attachSwipe(card, i) {
     }
   }
 
+  inputEl.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      finishWithPrice();
+    }
+  });
+
+  cardSaveBtnEl.addEventListener('click', finishWithPrice);
   card.addEventListener('pointerup', finish);
   card.addEventListener('pointercancel', finish);
 }
