@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Back Nine Slots</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23062d1f'/%3E%3Ccircle cx='32' cy='24' r='12' fill='%23fff7dc'/%3E%3Cpath d='M32 36v18' stroke='%23f5c542' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M22 54h20' stroke='%23f5c542' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="steve-slot/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Birthday Edition</p>
+          <h1 id="heroTitle">$150 Golf Mart Gift Card</h1>
+          <p class="lede">Real money for gear, with one very suspicious chance to chase a ridiculous jackpot.</p>
+          <div class="hero-actions">
+            <button class="button primary" id="keepGiftButton" type="button">Keep the $150</button>
+            <button class="button secondary" id="riskButton" type="button">Risk it on Back Nine Slots</button>
+          </div>
+          <p class="toast" id="heroToast" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="gift-card" aria-label="Golf Mart gift card with a starting balance of 150 dollars">
+          <img src="steve-slot/assets/generated/golf-gift-card.png" alt="">
+          <div class="card-overlay">
+            <span>Golf Mart Gift Card</span>
+            <strong>$150</strong>
+            <em>Starting Balance</em>
+          </div>
+        </div>
+      </section>
+
+      <section class="buying-power" aria-labelledby="buyingTitle">
+        <div>
+          <p class="eyebrow">What $150 Already Buys</p>
+          <h2 id="buyingTitle">He is already dangerously close.</h2>
+          <p class="source-note">Approximate shopping math, based on Golf Mart Reno being a full-service Worldwide Golf Shops store and current online golf gear ranges.</p>
+        </div>
+        <div class="buying-grid">
+          <article>
+            <span>3 dozen-ish</span>
+            <strong>Premium golf balls</strong>
+            <p>Tour ball territory without needing to sell a wedge.</p>
+          </article>
+          <article>
+            <span>Restock kit</span>
+            <strong>Glove, tees, snacks</strong>
+            <p>Enough basics to pretend this season is under control.</p>
+          </article>
+          <article>
+            <span>Almost there</span>
+            <strong>Rangefinder territory</strong>
+            <p>Close enough that the slot machine can smell weakness.</p>
+          </article>
+          <article>
+            <span>Emotionally vital</span>
+            <strong>One putter cover</strong>
+            <p>Unnecessary, expensive, and therefore probably correct.</p>
+          </article>
+        </div>
+        <div class="stretch">
+          <p>But with one good spin, the bag starts looking dangerous.</p>
+          <div><strong>$175</strong><span>Ball restock + glove + accessories</span></div>
+          <div><strong>$190</strong><span>Rangefinder conversation gets serious</span></div>
+          <div><strong>Jackpot</strong><span>Three golf courses changes everything</span></div>
+        </div>
+      </section>
+
+      <section class="slot-section" id="slotSection" aria-labelledby="slotTitle">
+        <div class="slot-intro">
+          <p class="eyebrow">High Stakes, Low Integrity</p>
+          <h2 id="slotTitle">Back Nine Slots</h2>
+          <p>Pull the lever. Chase the dream. Ignore the fact that the house has your handicap.</p>
+        </div>
+
+        <div class="machine-shell" id="slotMachine">
+          <img class="cabinet-art" src="steve-slot/assets/generated/slot-cabinet.png" alt="">
+          <div class="bulbs" aria-hidden="true"></div>
+          <div class="marquee">Back Nine Slots</div>
+
+          <div class="jackpot-panel" aria-label="Jackpot pays 2500 dollars for three golf course symbols">
+            <span>Jackpot</span>
+            <strong>⛳️ ⛳️ ⛳️ = $2,500</strong>
+          </div>
+
+          <div class="scoreboard" aria-live="polite">
+            <div><span>Balance</span><strong id="balanceValue">$150</strong></div>
+            <div><span>Bet</span><strong id="betValue">$25</strong></div>
+            <div><span>Spin</span><strong id="spinValue">0</strong></div>
+          </div>
+
+          <div class="reels" aria-label="Slot machine reels">
+            <div class="reel"><div class="symbol" id="reel0" role="img" aria-label="Golf Course"></div></div>
+            <div class="reel"><div class="symbol" id="reel1" role="img" aria-label="Golfer"></div></div>
+            <div class="reel"><div class="symbol" id="reel2" role="img" aria-label="Trophy"></div></div>
+          </div>
+
+          <div class="lever" id="lever" role="button" tabindex="0" aria-label="Pull slot machine lever">
+            <div class="lever-track"></div>
+            <div class="lever-arm"></div>
+            <div class="lever-handle"></div>
+          </div>
+
+          <div class="machine-actions">
+            <button class="button spin" id="spinButton" type="button">Pull Lever</button>
+            <button class="button cash" id="cashOutButton" type="button">Cash Out</button>
+          </div>
+
+          <div class="result-card">
+            <div class="result-kicker" id="resultKicker">Awaiting terrible decision</div>
+            <p id="resultText">The $150 is intact. For now.</p>
+          </div>
+
+          <div class="effect-overlay" id="effectOverlay" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="final-reveal hidden" id="finalReveal" aria-live="polite">
+        <p class="eyebrow">Final Balance</p>
+        <h2 id="finalHeadline">The machine keeps score.</h2>
+        <p id="finalCopy">Cash out before the balance hits $0, or the birthday casino wins.</p>
+      </section>
+    </main>
+
+    <script src="steve-slot/script.js"></script>
+  </body>
+</html>
