@@ -25,10 +25,10 @@ const riggedSpinPlan = [
   { type: "loss", delta: -25, message: "That spin went directly into the water.", result: ["ball", "cart", "glove"] },
   { type: "loss", delta: -15, message: "A clean strike with terrible financial consequences.", result: ["putter", "tee", "driver"] },
   { type: "loss", delta: -25, message: "The machine just ordered another glove on your behalf.", result: ["glove", "rangefinder", "cart"] },
-  { type: "finalBust", delta: -25, message: "You gambled it all the way down to $0.", result: ["sad", "sad", "sad"] }
+  { type: "finalBust", delta: -25, message: "Two golf courses again. The third reel had no mercy. You gambled it all the way down to $0.", result: ["course", "course", "driver"], betweenReels: [2] }
 ];
 
-const STORAGE_KEY = "backNineSlotsGiftCardState:v3";
+const STORAGE_KEY = "backNineSlotsGiftCardState:v4";
 
 const defaultGameState = {
   startingBalance: 150,
@@ -150,7 +150,7 @@ async function animateReel(index, targetId, duration, options = {}) {
 
 async function spinReels(plan) {
   const isNear = plan.type === "nearMiss" || plan.type === "jackpotNearMiss";
-  const extra = plan.type === "jackpotNearMiss" ? 1350 : isNear ? 520 : 0;
+  const extra = plan.type === "jackpotNearMiss" || plan.type === "finalBust" ? 1350 : isNear ? 520 : 0;
   await Promise.all([
     animateReel(0, plan.result[0], 1050),
     animateReel(1, plan.result[1], 1320),
