@@ -7,8 +7,7 @@ const symbols = [
   { id: "glove", label: "Golf Glove", glyph: "🧤" },
   { id: "trophy", label: "Trophy", glyph: "🏆" },
   { id: "cart", label: "Golf Cart", glyph: "🛺" },
-  { id: "rangefinder", label: "Rangefinder", glyph: "🔭" },
-  { id: "sad", label: "Sad Golf Ball", glyph: "😵" }
+  { id: "rangefinder", label: "Rangefinder", glyph: "🔭" }
 ];
 
 const riggedSpinPlan = [
@@ -28,7 +27,7 @@ const riggedSpinPlan = [
   { type: "finalBust", delta: -25, message: "Two golf courses again. The third reel had no mercy. You gambled it all the way down to $0.", result: ["course", "course", "driver"], betweenReels: [2] }
 ];
 
-const STORAGE_KEY = "backNineSlotsGiftCardState:v4";
+const STORAGE_KEY = "backNineSlotsGiftCardState:v5";
 
 const defaultGameState = {
   startingBalance: 150,
@@ -130,7 +129,7 @@ function sleep(ms) {
 }
 
 function randomSymbolId() {
-  return symbols[Math.floor(Math.random() * (symbols.length - 1))].id;
+  return symbols[Math.floor(Math.random() * symbols.length)].id;
 }
 
 async function animateReel(index, targetId, duration, options = {}) {
