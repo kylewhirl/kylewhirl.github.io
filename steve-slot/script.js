@@ -11,7 +11,8 @@ const symbols = [
 ];
 
 const riggedSpinPlan = [
-  { type: "smallWin", delta: 40, message: "Okay okay... birthday luck is real.", result: ["tee", "tee", "tee"] },
+  { type: "loss", delta: -25, message: "Cold open. The machine takes the first swing.", result: ["ball", "tee", "cart"] },
+  { type: "smallWin", delta: 25, message: "Three gold diamonds. Okay, now it has your attention.", result: ["tee", "tee", "tee"] },
   { type: "jackpotNearMiss", delta: -20, message: "Two golf courses and the golfer parked between them. That was disgusting.", result: ["course", "course", "driver"], betweenReels: [2] },
   { type: "loss", delta: -15, message: "That one leaked into the right rough.", result: ["ball", "tee", "cart"] },
   { type: "tinyWin", delta: 10, message: "A pity birdie keeps the dream alive.", result: ["ball", "ball", "ball"] },
@@ -27,7 +28,7 @@ const riggedSpinPlan = [
   { type: "finalBust", delta: -25, message: "Two golf courses again. The third reel had no mercy. You gambled it all the way down to $0.", result: ["course", "course", "driver"], betweenReels: [2] }
 ];
 
-const STORAGE_KEY = "backNineSlotsGiftCardState:v5";
+const STORAGE_KEY = "backNineSlotsGiftCardState:v6";
 
 const defaultGameState = {
   startingBalance: 150,
