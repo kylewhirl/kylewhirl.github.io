@@ -3,252 +3,132 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101714">
-  <meta name="description" content="Kyle Worrall — composer, researcher, and builder exploring music, intelligent systems, and play.">
-  <title>Between Water &amp; Stone — Kyle Worrall</title>
+  <meta name="theme-color" content="#f1f0ea">
+  <meta name="description" content="Kyle Worrall is a freelance coder building useful software, smart-home tools, and small experiments.">
+  <meta property="og:title" content="Kyle Worrall — Freelance coder">
+  <meta property="og:description" content="Useful software, smart-home tools, and small experiments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kylewhirl.com">
+  <meta property="og:image" content="https://github.com/kylewhirl.png?size=1200">
+  <title>Kyle Worrall — Freelance coder</title>
 
   <link rel="icon" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/Farthest.png">
-  <link rel="preload" as="image" href="img/Far.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;family=Libre+Franklin:wght@800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to the journey</a>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="page-progress" aria-hidden="true"><span></span></div>
+  <a class="skip-link" href="#work">Skip to work</a>
+  <div class="cursor-light" aria-hidden="true"></div>
 
-  <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Kyle Worrall, home">
-      <span class="brand-mark">KW</span>
-      <span class="brand-name">Kyle Worrall</span>
-    </a>
-
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#sound">Sound</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Kyle Worrall, home">KW<span>®</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#field-notes">Notes</a>
-      <a href="#contact">Contact</a>
+      <a href="https://github.com/kylewhirl" target="_blank" rel="noreferrer">GitHub ↗</a>
     </nav>
-
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="menu-toggle__glow" aria-hidden="true"></span>
-      <span class="sr-only">Open menu</span>
-    </button>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav aria-label="Mobile navigation">
-      <a href="#sound"><span>01</span>Sound</a>
-      <a href="#work"><span>02</span>Work</a>
-      <a href="#field-notes"><span>03</span>Notes</a>
-      <a href="#contact"><span>04</span>Contact</a>
-    </nav>
-    <p>Music · systems · quiet places</p>
-  </div>
-
-  <main id="main">
+  <main>
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-scene" aria-hidden="true">
-        <img class="scene-layer scene-layer--1" src="img/Farthest.png" alt="">
-        <img class="scene-layer scene-layer--2" src="img/Far.png" alt="">
-        <img class="scene-layer scene-layer--3" src="img/Mid.png" alt="">
-        <img class="scene-layer scene-layer--4" src="img/middle.png" alt="">
-        <img class="scene-layer scene-layer--5" src="img/Close.png" alt="">
-        <img class="scene-layer scene-layer--6" src="img/Closest.png" alt="">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <p class="hero-kicker hero-enter">Freelance coder / @kylewhirl</p>
+      <h1 id="hero-title" class="hero-enter">
+        <span>Kyle</span>
+        <span>Worrall</span>
+      </h1>
+      <div class="portrait-wrap hero-enter">
+        <img src="https://github.com/kylewhirl.png?size=800" alt="Kyle Worrall under a starry night sky">
+        <span class="orbit" aria-hidden="true">Code · Hardware · Useful things · </span>
       </div>
-      <div class="hero-wash" aria-hidden="true"></div>
-      <div class="hero-water" aria-hidden="true">
-        <span class="water-line water-line--1"></span>
-        <span class="water-line water-line--2"></span>
-        <span class="water-line water-line--3"></span>
-      </div>
-
-      <div class="hero-content">
-        <p class="eyebrow hero-eyebrow">Composer · Researcher · Builder</p>
-        <h1 id="hero-title"><span>Kyle</span> <span>Worrall</span></h1>
-        <p class="hero-statement">Things I make, places I go,<br>sounds I return to.</p>
-        <a class="text-link hero-link" href="#threshold">
-          Enter the landscape
-          <svg viewBox="0 0 34 14" aria-hidden="true"><path d="M0 7h31M25 1l6 6-6 6"/></svg>
-        </a>
-      </div>
-
-      <div class="hero-aside" aria-hidden="true">
-        <span>53.6458° N</span>
-        <span>03.0101° W</span>
-      </div>
-      <div class="scroll-marker" aria-hidden="true"><span></span><small>Scroll</small></div>
+      <p class="hero-intro hero-enter">I make software for the things I want to exist.</p>
+      <a class="hero-arrow hero-enter" href="#about" aria-label="Read more about Kyle">↓</a>
+      <div class="hero-index" aria-hidden="true"><span>01</span><span>2026</span></div>
     </section>
 
-    <section class="threshold light-section" id="threshold" aria-labelledby="threshold-title">
-      <div class="section-index reveal">
-        <span>01</span>
-        <span>The threshold</span>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <p class="section-label reveal">01 / About</p>
+      <div class="about-copy">
+        <h2 id="about-title" class="reveal">I’m a freelance coder who likes making digital things work in the physical world.</h2>
+        <p class="reveal">My public work moves between smart-home integrations, hardware controls, iOS utilities, and web tools. This is the honest version of my corner of the internet.</p>
       </div>
-      <div class="threshold-copy">
-        <p class="eyebrow reveal">Between precision and play</p>
-        <h2 id="threshold-title" class="reveal">I make tools, sounds, and experiences that feel <em>alive.</em></h2>
-        <p class="threshold-detail reveal">My work lives where music, intelligent systems, and human curiosity overlap—built with a researcher’s rigor and a composer’s ear.</p>
-      </div>
-      <div class="ink-circle reveal" aria-hidden="true">
-        <span></span>
-        <small>間</small>
+      <div class="about-aside reveal">
+        <span>Usually working with</span>
+        <p>TypeScript<br>Python<br>Swift<br>JavaScript</p>
       </div>
     </section>
 
-    <section class="listening-room" id="sound" aria-labelledby="sound-title">
-      <div class="room-architecture" aria-hidden="true">
-        <span class="beam beam--top"></span>
-        <span class="beam beam--left"></span>
-        <span class="beam beam--right"></span>
-        <div class="room-window">
-          <div class="window-mountain"></div>
-          <div class="window-moon"></div>
-        </div>
-        <div class="room-lantern"><span></span></div>
-      </div>
-
-      <div class="room-content">
-        <div class="section-index section-index--light reveal">
-          <span>02</span>
-          <span>The listening room</span>
-        </div>
-        <div class="room-copy reveal">
-          <p class="eyebrow">A place for sound</p>
-          <h2 id="sound-title">Listen to the space<br>between the notes.</h2>
-          <p>An ambient soundscape generated in your browser. No track, no loop—just a small living system.</p>
-          <button class="sound-toggle" type="button" aria-pressed="false">
-            <span class="sound-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <span class="sound-toggle__label">Begin soundscape</span>
-          </button>
-        </div>
-        <div class="sound-viz" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="work light-section" id="work" aria-labelledby="work-title">
-      <div class="work-heading">
-        <div class="section-index reveal"><span>03</span><span>Selected work</span></div>
-        <div>
-          <p class="eyebrow reveal">Ideas in motion</p>
-          <h2 id="work-title" class="reveal">Built to be<br><em>heard &amp; felt.</em></h2>
-        </div>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="work-heading reveal">
+        <p class="section-label">02 / Selected work</p>
+        <h2 id="work-title">Things with<br>a reason to exist.</h2>
       </div>
 
       <div class="project-list">
-        <a class="project-row reveal" href="https://apps.apple.com/app/rewrapped/id6754272094" target="_blank" rel="noreferrer">
+        <a class="project reveal" href="https://github.com/kylewhirl/busybar-home-assistant" target="_blank" rel="noreferrer">
           <span class="project-number">01</span>
-          <span class="project-name">Rewrapped</span>
-          <span class="project-type">Music · iOS</span>
+          <span class="project-main">
+            <strong>BUSY Bar × Home Assistant</strong>
+            <span>A tactile smart-home controller and two-screen pixel dashboard.</span>
+          </span>
+          <span class="project-meta">Python / 2026</span>
           <span class="project-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="project-row reveal" href="https://research.edgehill.ac.uk/en/persons/kyle-worrall/" target="_blank" rel="noreferrer">
+
+        <a class="project reveal" href="https://github.com/kylewhirl/busybar-codex" target="_blank" rel="noreferrer">
           <span class="project-number">02</span>
-          <span class="project-name">Expressive Music AI</span>
-          <span class="project-type">Research · Intelligence</span>
+          <span class="project-main">
+            <strong>BUSY Bar × Codex</strong>
+            <span>A tactile, two-screen controller for the Codex macOS app.</span>
+          </span>
+          <span class="project-meta">TypeScript / 2026</span>
           <span class="project-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="project-row reveal" href="https://github.com/kylewhirl" target="_blank" rel="noreferrer">
+
+        <a class="project reveal" href="https://theqrcode.co" target="_blank" rel="noreferrer">
           <span class="project-number">03</span>
-          <span class="project-name">Small Internet Experiments</span>
-          <span class="project-type">Code · Play</span>
+          <span class="project-main">
+            <strong>The QR Code Co.</strong>
+            <span>A QR-code platform with an API, dashboard, docs, and TypeScript SDK.</span>
+          </span>
+          <span class="project-meta">Next.js / Live</span>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="project reveal" href="https://github.com/kylewhirl/SnapSwitch" target="_blank" rel="noreferrer">
+          <span class="project-number">04</span>
+          <span class="project-main">
+            <strong>SnapSwitch</strong>
+            <span>An iOS app that launches a Shortcut from Camera Control.</span>
+          </span>
+          <span class="project-meta">Swift / 2026</span>
           <span class="project-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
 
-      <div class="work-note reveal">
-        <span>Process</span>
-        <p>Listen closely. Find the pattern.<br>Make the invisible tangible.</p>
-      </div>
+      <a class="all-work reveal" href="https://github.com/kylewhirl?tab=repositories" target="_blank" rel="noreferrer">
+        <span>Explore all public projects</span>
+        <span>View on GitHub ↗</span>
+      </a>
     </section>
 
-    <section class="field-notes" id="field-notes" aria-labelledby="notes-title">
-      <div class="notes-sticky">
-        <div class="notes-image" aria-hidden="true">
-          <div class="notes-image__mountain"></div>
-          <div class="notes-image__filter"></div>
-          <p><span data-note-location>Mountain</span><small data-note-coordinate>35.3606° N · 138.7274° E</small></p>
-        </div>
-      </div>
-
-      <div class="notes-content">
-        <div class="section-index section-index--light reveal"><span>04</span><span>Field notes</span></div>
-        <div class="notes-intro reveal">
-          <p class="eyebrow">Places I return to</p>
-          <h2 id="notes-title">A quiet archive<br>of attention.</h2>
-        </div>
-
-        <article class="note is-active" data-note="mountain" data-location="Mountain" data-coordinate="35.3606° N · 138.7274° E">
-          <span>01 / Elevation</span>
-          <h3>Mountain</h3>
-          <p>Distance makes the noise smaller. Scale puts everything back in its place.</p>
-        </article>
-        <article class="note" data-note="water" data-location="Open water" data-coordinate="53.6458° N · 03.0101° W">
-          <span>02 / Tide</span>
-          <h3>Water</h3>
-          <p>Never still, never hurried. A rhythm too large to need a metronome.</p>
-        </article>
-        <article class="note" data-note="garden" data-location="Garden" data-coordinate="One careful branch at a time">
-          <span>03 / Patience</span>
-          <h3>Garden</h3>
-          <p>Good systems are grown. Structure matters; so does knowing when to leave space.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="courtyard" id="contact" aria-labelledby="contact-title">
-      <div class="courtyard-light" aria-hidden="true"></div>
-      <svg class="bonsai" viewBox="0 0 720 580" role="img" aria-label="Silhouette of a bonsai tree">
-        <defs>
-          <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#89674c"/><stop offset="1" stop-color="#35271f"/>
-          </linearGradient>
-        </defs>
-        <g class="bonsai-trunk" fill="none" stroke="url(#trunk)" stroke-linecap="round">
-          <path stroke-width="32" d="M365 520c-9-76 21-121 5-187-16-65-4-119 41-185"/>
-          <path stroke-width="19" d="M375 360c-33-53-88-72-142-82"/>
-          <path stroke-width="13" d="M272 291c-18-31-45-52-81-60"/>
-          <path stroke-width="16" d="M389 293c48-28 94-38 143-31"/>
-          <path stroke-width="11" d="M430 270c38-31 74-44 111-43"/>
-          <path stroke-width="12" d="M400 210c-25-34-28-72-9-112"/>
-        </g>
-        <g class="bonsai-foliage">
-          <path d="M119 249c16-54 62-85 113-78 16-42 63-65 105-45 25-36 75-39 105-8 38-8 75 14 82 52 49 1 81 36 78 75-2 36-31 63-71 69-33 5-66-4-94-19-37 30-91 31-129 3-43 28-97 24-133-9-32 2-61-13-56-40Z"/>
-          <path d="M342 157c-2-36 28-67 66-69 12-33 52-47 81-26 31-18 72-1 78 34 38 5 61 33 55 65-6 31-36 50-70 46-27 25-72 25-99-1-34 19-78 7-92-27-10-2-18-10-19-22Z"/>
-          <path d="M93 238c-1-32 26-58 60-56 18-27 59-31 82-7 34-4 63 19 65 50 2 33-28 60-65 59-31 27-81 18-98-17-23 0-43-12-44-29Z"/>
-        </g>
-        <path class="bonsai-pot" d="M283 492h177l-18 69c-3 12-14 19-27 19h-88c-13 0-24-7-27-19l-17-69Z"/>
-        <path class="bonsai-pot-rim" d="M267 478h210v28H267z"/>
-      </svg>
-
-      <div class="contact-copy reveal">
-        <p class="eyebrow">The courtyard</p>
-        <h2 id="contact-title">Make something<br>that <em>moves.</em></h2>
-        <p>For thoughtful collaborations in music, technology, research, and the spaces between.</p>
-        <a class="contact-link" href="https://www.linkedin.com/in/kyleworrallmusic/" target="_blank" rel="noreferrer">
-          Start a conversation
-          <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-
-      <footer>
-        <p>© <span data-year></span> Kyle Worrall</p>
-        <nav aria-label="Social links">
-          <a href="https://github.com/kylewhirl" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/kyleworrallmusic/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://x.com/kjw_audio" target="_blank" rel="noreferrer">X</a>
-        </nav>
-        <a href="#top">Back to the mountain ↑</a>
-      </footer>
+    <section class="contact" aria-labelledby="contact-title">
+      <p class="section-label reveal">03 / Say hello</p>
+      <h2 id="contact-title" class="reveal">Have a useful idea?</h2>
+      <a class="contact-link reveal" href="https://github.com/kylewhirl" target="_blank" rel="noreferrer">Find me on GitHub <span>↗</span></a>
+      <p class="contact-note reveal">The projects are public.<br>Take a look around.</p>
     </section>
   </main>
+
+  <footer>
+    <span>© <span data-year></span> Kyle Worrall</span>
+    <a href="https://x.com/kylewhirl" target="_blank" rel="noreferrer">X ↗</a>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
